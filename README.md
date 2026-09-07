@@ -21,6 +21,8 @@ Expected URLs after Pages is enabled:
 - Privacy Policy: https://angryhh34.github.io/Kavuqo-site/privacy/
 - Support: https://angryhh34.github.io/Kavuqo-site/support/
 
+The repository is configured for static GitHub Pages publishing from `main` / repository root. A fresh commit may be used to trigger the first deployment after Pages is enabled.
+
 ## Support
 
 Until a dedicated support email is configured, the public Support page uses this repository's GitHub Issues as the support channel. Users are explicitly warned not to include private financial information.
