@@ -1,0 +1,81 @@
+name: Kavuqo support request
+description: Report a Kavuqo problem or ask for help.
+title: "Support: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for using Kavuqo.
+
+        **Do not include bank details, card numbers, account numbers, passwords, transaction exports, or other sensitive financial information.** This is a public support request.
+
+  - type: input
+    id: version
+    attributes:
+      label: Kavuqo version and build
+      description: Find this in Kavuqo → Settings.
+      placeholder: "1.0 (1)"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: iPhone model
+      placeholder: "iPhone 17 Pro"
+    validations:
+      required: true
+
+  - type: input
+    id: ios
+    attributes:
+      label: iOS version
+      placeholder: "iOS 26.x"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Home
+        - Manual entry
+        - Voice entry
+        - Typed Smart Entry
+        - History
+        - Stats
+        - Settings
+        - Apple Intelligence
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem without including private financial information.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Tell us the shortest sequence of actions that reproduces the problem.
+      placeholder: |
+        1. Open Kavuqo
+        2. Tap ...
+        3. ...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I confirm this report contains no sensitive financial or account information.
+          required: true
