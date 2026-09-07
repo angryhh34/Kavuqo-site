@@ -26,27 +26,32 @@
       <p>Kavuqo is designed as a local-first personal-finance app. The developer does not operate a Kavuqo backend, analytics service, advertising system, or user-account service.</p>
 
       <h2>Information stored by Kavuqo</h2>
-      <p>Transactions, categories, amounts, currencies, dates, descriptions, and app preferences are stored locally on the user's iPhone using Apple system frameworks.</p>
+      <p>Transactions, categories, amounts, currencies, dates, descriptions, app preferences, and the local Free-plan Smart Entry allowance state are stored locally on the user's iPhone using Apple system frameworks.</p>
       <p>Kavuqo does not upload this financial data to a developer-operated server.</p>
 
       <h2>Voice entry and speech recognition</h2>
       <p>Voice entry is optional. When the user chooses it, Kavuqo uses Apple's Speech framework and requests microphone and speech-recognition permission.</p>
       <p>Kavuqo does not persist raw microphone audio. Depending on the device, operating-system configuration, language, and Apple service availability, speech recognition may be performed on-device or may use Apple's supported speech-recognition processing path. Kavuqo does not receive or store the audio on a developer-operated server.</p>
-      <p>Typed Smart Entry and manual entry remain available without microphone or speech-recognition permission.</p>
+      <p>Typed Smart Entry can be used without microphone or speech-recognition permission while the user's Free allowance remains or without a Smart Entry limit with Premium. Manual entry always remains available without microphone or speech-recognition permission.</p>
 
       <h2>Apple Intelligence and Foundation Models</h2>
       <p>On supported devices, Kavuqo may use Apple's on-device Foundation Models to improve transaction understanding. This feature is optional and depends on Apple Intelligence availability on the device.</p>
       <p>Kavuqo does not send Foundation Models prompts or model results to a developer-operated AI service.</p>
 
+      <h2>Kavuqo Premium and App Store purchases</h2>
+      <p>Kavuqo Premium is offered through Apple's App Store using StoreKit. Apple processes subscription purchases and billing under the user's Apple Account and Apple's terms.</p>
+      <p>Kavuqo checks verified StoreKit entitlement information, such as whether an eligible Kavuqo Premium subscription is currently active, so the app can unlock Premium features. Kavuqo does not receive or store the user's payment-card or bank-account details and does not send StoreKit entitlement information to a developer-operated server.</p>
+
       <h2>Analytics, advertising, and tracking</h2>
-      <p>Kavuqo does not include third-party analytics SDKs, advertising SDKs, cross-app tracking, or behavioral profiling.</p>
+      <p>Kavuqo does not include third-party analytics SDKs, advertising SDKs, cross-app tracking, or behavioral profiling. The optional Premium card shown inside the Free version is first-party Kavuqo UI and is not supplied by an advertising network.</p>
 
       <h2>Data collection by the developer</h2>
       <p>The developer does not collect data from Kavuqo in the App Store privacy-label sense: Kavuqo does not transmit app data to the developer or a third-party partner for storage or later access.</p>
-      <p>Apple system services used by iOS may process information according to Apple's own privacy terms and device settings.</p>
+      <p>Apple system services used by iOS, including the App Store/StoreKit and Speech where applicable, may process information according to Apple's own privacy terms and device settings.</p>
 
       <h2>Deleting data</h2>
-      <p>Users can delete individual transactions inside Kavuqo. Removing the app from the iPhone removes Kavuqo's locally stored app data, subject to normal iOS device backup behavior controlled by the user and Apple.</p>
+      <p>Users can delete individual transactions inside Kavuqo. Removing the app from the iPhone removes Kavuqo's locally stored app data and Free-plan allowance state, subject to normal iOS device backup behavior controlled by the user and Apple.</p>
+      <p>An App Store subscription is associated with the user's Apple Account rather than only with local Kavuqo app data. Subscription management and cancellation are handled through Apple.</p>
 
       <h2>Changes to this policy</h2>
       <p>If Kavuqo later adds cloud sync, accounts, analytics, third-party services, or other data-handling behavior, this policy and the App Store privacy disclosures will be updated before that behavior ships.</p>
