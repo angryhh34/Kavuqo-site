@@ -1,0 +1,246 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --surface: #f4f5f7;
+  --surface-strong: #eceef1;
+  --text: #111214;
+  --muted: #8b8d93;
+  --accent: #4aaea8;
+  --accent-soft: #d9f1ef;
+  --border: #d8dadd;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --surface: #1c1c1e;
+    --surface-strong: #2c2c2e;
+    --text: #f7f7f8;
+    --muted: #98989f;
+    --accent: #67c8c2;
+    --accent-soft: #163936;
+    --border: #343438;
+    --shadow: none;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+.shell {
+  width: min(960px, calc(100% - 40px));
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 96px 0 56px;
+  max-width: 760px;
+}
+
+.brand-mark {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: white;
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  margin: 38px 0 10px;
+  font-size: 28px;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  margin: 28px 0 8px;
+  font-size: 20px;
+}
+
+p { margin: 0 0 16px; }
+
+.lede {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: clamp(20px, 3vw, 26px);
+  max-width: 720px;
+}
+
+.lede.compact { max-width: 660px; }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 650;
+}
+
+.button:hover { text-decoration: none; }
+
+.button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 8px 0 72px;
+}
+
+.card,
+.notice {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.card h2 {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.card p,
+.updated,
+.policy > p,
+.policy li {
+  color: var(--muted);
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.topnav .brand {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.topnav div { display: flex; gap: 20px; }
+
+.document .policy {
+  max-width: 760px;
+  padding: 64px 0 56px;
+}
+
+.document h1 {
+  font-size: clamp(38px, 6vw, 60px);
+}
+
+.updated { margin-top: 14px; }
+
+.policy > p:first-of-type:not(.eyebrow) {
+  font-size: 19px;
+}
+
+.policy ul {
+  padding-left: 24px;
+  margin: 10px 0 18px;
+}
+
+.policy li { margin: 8px 0; }
+
+.notice {
+  margin: 30px 0 36px;
+}
+
+.notice strong {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.notice p { color: var(--muted); }
+
+.notice .button { margin-top: 8px; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 28px 0 42px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+footer nav {
+  display: flex;
+  gap: 18px;
+}
+
+.error-page {
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.error-page .card { max-width: 560px; }
+
+@media (max-width: 760px) {
+  .shell { width: min(100% - 28px, 960px); }
+  .hero { padding-top: 64px; }
+  .grid { grid-template-columns: 1fr; }
+  .document .policy { padding-top: 46px; }
+  footer { align-items: flex-start; flex-direction: column; }
+}
