@@ -26,8 +26,9 @@
       <p>Kavuqo is designed as a local-first personal-finance app. The developer does not operate a Kavuqo backend, analytics service, advertising system, or user-account service.</p>
 
       <h2>Information stored by Kavuqo</h2>
-      <p>Transactions, categories, amounts, currencies, dates, descriptions, app preferences, and the local Free-plan Smart Entry allowance state are stored locally on the user's iPhone using Apple system frameworks.</p>
-      <p>Kavuqo does not upload this financial data to a developer-operated server.</p>
+      <p>Transactions, categories, amounts, currencies, dates, descriptions, and ordinary app preferences are stored locally on the user's iPhone using Apple system frameworks.</p>
+      <p>The Free-plan Smart Entry allowance state is also local. Kavuqo stores a minimal quota record in the iOS Keychain so ordinary app reinstall or app-container preference deletion does not trivially reset the free allowance. The quota record contains only quota period identifiers and usage count; it does not contain transaction amounts, descriptions, speech transcripts, payment information, or other financial records.</p>
+      <p>Kavuqo does not upload financial data or quota state to a developer-operated server.</p>
 
       <h2>Voice entry and speech recognition</h2>
       <p>Voice entry is optional. When the user chooses it, Kavuqo uses Apple's Speech framework and requests microphone and speech-recognition permission.</p>
@@ -54,7 +55,8 @@
       <p>Please do not send bank details, card numbers, account numbers, passwords, private financial records, transaction exports, or other sensitive credentials in support messages.</p>
 
       <h2>Deleting data</h2>
-      <p>Users can delete individual transactions inside Kavuqo. Removing the app from the iPhone removes Kavuqo's locally stored app data and Free-plan allowance state, subject to normal iOS device backup behavior controlled by the user and Apple.</p>
+      <p>Users can delete individual transactions inside Kavuqo. Removing the app from the iPhone removes Kavuqo's transaction database and ordinary app-container preferences, subject to normal iOS device backup behavior controlled by the user and Apple.</p>
+      <p>A small non-financial Free-plan quota record may remain in the iOS Keychain after ordinary app removal so reinstalling the app does not automatically restore a fresh free Smart Entry allowance. This record contains only quota period identifiers and usage count.</p>
       <p>An App Store subscription is associated with the user's Apple Account rather than only with local Kavuqo app data. Subscription management and cancellation are handled through Apple.</p>
 
       <h2>Changes to this policy</h2>
