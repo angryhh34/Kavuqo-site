@@ -21,14 +21,21 @@
     <article class="policy">
       <p class="eyebrow">Privacy</p>
       <h1>Kavuqo Privacy Policy</h1>
-      <p class="updated">Effective date: September 8, 2026</p>
+      <p class="updated">Effective date: September 9, 2026</p>
 
-      <p>Kavuqo is designed as a local-first personal-finance app. The developer does not operate a Kavuqo backend, analytics service, advertising system, or user-account service.</p>
+      <p>Kavuqo is designed as a local-first personal-finance app. The developer does not operate a Kavuqo transaction backend, analytics service, advertising system, or user-account service.</p>
 
       <h2>Information stored by Kavuqo</h2>
       <p>Transactions, categories, amounts, currencies, dates, descriptions, and ordinary app preferences are stored locally on the user's iPhone using Apple system frameworks.</p>
-      <p>The Free-plan Smart Entry allowance state is also local. Kavuqo stores a minimal quota record in the iOS Keychain so ordinary app reinstall or app-container preference deletion does not trivially reset the free allowance. The quota record contains only quota period identifiers and usage count; it does not contain transaction amounts, descriptions, speech transcripts, payment information, or other financial records.</p>
-      <p>Kavuqo does not upload financial data or quota state to a developer-operated server.</p>
+      <p>The Free-plan Smart Entry allowance state is also local. Kavuqo stores a minimal quota record in the iOS Keychain. It may contain the first-use time anchor, current allowance-period index, usage count, latest trusted-time value, and limited verified App Store acquisition information. It does not contain transaction amounts, descriptions, speech transcripts, raw audio, payment-card details, or financial history.</p>
+      <p>Kavuqo does not upload financial records or the quota record to a developer-operated server.</p>
+
+      <h2>Free allowance time verification</h2>
+      <p>Kavuqo uses personal monthly Free Smart Entry periods beginning from first use of the app. The phone's local clock is not trusted to grant a new Free allowance by itself.</p>
+      <p>On ordinary launches before the next allowance boundary appears due, Kavuqo does not contact an external time service for quota renewal. Only when the device clock indicates that the next personal monthly boundary may have arrived does Kavuqo make a short HTTPS request to verify current UTC time.</p>
+      <p>Kavuqo uses Akamai UTC Time Service as the primary time source and TimeAPI.io as a fallback if the primary source is unavailable. These requests do not include Kavuqo transaction data, amounts, descriptions, speech text, StoreKit transaction or product identifiers, support email, or other financial records.</p>
+      <p>Like ordinary HTTPS services, Akamai and TimeAPI.io receive network information needed to handle the request, including the source IP address, and may retain server or network logs according to their own privacy policies. Kavuqo uses the response only to decide whether a new Free Smart Entry allowance period has actually begun.</p>
+      <p>If trusted time cannot be verified, Kavuqo does not grant a new Free Smart Entry allowance from the device clock alone. Manual transaction entry remains available offline without restriction.</p>
 
       <h2>Voice entry and speech recognition</h2>
       <p>Voice entry is optional. When the user chooses it, Kavuqo uses Apple's Speech framework and requests microphone and speech-recognition permission.</p>
@@ -41,14 +48,16 @@
 
       <h2>Kavuqo Premium and App Store purchases</h2>
       <p>Kavuqo Premium is offered through Apple's App Store using StoreKit. Apple processes subscription purchases and billing under the user's Apple Account and Apple's terms.</p>
-      <p>Kavuqo checks verified StoreKit entitlement information, such as whether an eligible Kavuqo Premium subscription is currently active, so the app can unlock Premium features. Kavuqo does not receive or store the user's payment-card or bank-account details and does not send StoreKit entitlement information to a developer-operated server.</p>
+      <p>Kavuqo checks verified StoreKit entitlement information so it can unlock Premium features. Kavuqo does not receive or store the user's payment-card or bank-account details and does not send StoreKit entitlement information to a developer-operated server.</p>
+      <p>Kavuqo may also read verified App Store acquisition information supplied by StoreKit as an auxiliary anti-reinstall signal for the Free allowance. Kavuqo does not silently invoke an App Store refresh that could require authentication solely for quota checking.</p>
 
       <h2>Analytics, advertising, and tracking</h2>
       <p>Kavuqo does not include third-party analytics SDKs, advertising SDKs, cross-app tracking, or behavioral profiling. The optional Premium card shown inside the Free version is first-party Kavuqo UI and is not supplied by an advertising network.</p>
+      <p>The conditional trusted-time requests described above are used only for Free-allowance integrity, not advertising, profiling, analytics, or cross-app tracking.</p>
 
-      <h2>Data collection by the developer</h2>
-      <p>The developer does not collect data from Kavuqo in the App Store privacy-label sense: Kavuqo does not transmit app data to the developer or a third-party partner for storage or later access.</p>
+      <h2>Apple system services and external providers</h2>
       <p>Apple system services used by iOS, including the App Store/StoreKit and Speech where applicable, may process information according to Apple's own privacy terms and device settings.</p>
+      <p>Akamai and TimeAPI.io process the limited network request used for trusted-time verification under their own privacy policies. Kavuqo does not send them financial records or user-entered Smart Entry content.</p>
 
       <h2>Support communications</h2>
       <p>If you contact Kavuqo Support by email, the email address and information you choose to include are processed by the email provider for the purpose of responding to your request. Support email is separate from the Kavuqo app itself; the app does not automatically send transaction data or other financial records to support.</p>
@@ -56,11 +65,11 @@
 
       <h2>Deleting data</h2>
       <p>Users can delete individual transactions inside Kavuqo. Removing the app from the iPhone removes Kavuqo's transaction database and ordinary app-container preferences, subject to normal iOS device backup behavior controlled by the user and Apple.</p>
-      <p>A small non-financial Free-plan quota record may remain in the iOS Keychain after ordinary app removal so reinstalling the app does not automatically restore a fresh free Smart Entry allowance. This record contains only quota period identifiers and usage count.</p>
+      <p>A small non-financial Free-plan quota record may remain in the iOS Keychain after ordinary app removal as best-effort abuse prevention. It contains only allowance/timing/acquisition metadata described above, not financial history.</p>
       <p>An App Store subscription is associated with the user's Apple Account rather than only with local Kavuqo app data. Subscription management and cancellation are handled through Apple.</p>
 
       <h2>Changes to this policy</h2>
-      <p>If Kavuqo later adds cloud sync, accounts, analytics, third-party services, or other data-handling behavior, this policy and the App Store privacy disclosures will be updated before that behavior ships.</p>
+      <p>If Kavuqo later adds cloud sync, accounts, analytics, additional third-party services, or other data-handling behavior, this policy and the App Store privacy disclosures will be updated before that behavior ships.</p>
 
       <h2>Support</h2>
       <p>For help with Kavuqo, email <a href="mailto:kavuqo@proton.me">kavuqo@proton.me</a> or visit the <a href="/Kavuqo-site/support/">Kavuqo Support page</a>.</p>
