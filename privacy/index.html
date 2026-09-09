@@ -32,10 +32,9 @@
 
       <h2>Free allowance time verification</h2>
       <p>Kavuqo uses personal monthly Free Smart Entry periods beginning from first use of the app. The phone's local clock is not trusted to grant a new Free allowance by itself.</p>
-      <p>On ordinary launches before the next allowance boundary appears due, Kavuqo does not contact an external time service for quota renewal. Only when the device clock indicates that the next personal monthly boundary may have arrived does Kavuqo make a short HTTPS request to verify current UTC time.</p>
-      <p>Kavuqo uses Akamai UTC Time Service as the primary time source and TimeAPI.io as a fallback if the primary source is unavailable. These requests do not include Kavuqo transaction data, amounts, descriptions, speech text, StoreKit transaction or product identifiers, support email, or other financial records.</p>
-      <p>Like ordinary HTTPS services, Akamai and TimeAPI.io receive network information needed to handle the request, including the source IP address, and may retain server or network logs according to their own privacy policies. Kavuqo uses the response only to decide whether a new Free Smart Entry allowance period has actually begun.</p>
-      <p>If trusted time cannot be verified, Kavuqo does not grant a new Free Smart Entry allowance from the device clock alone. Manual transaction entry remains available offline without restriction.</p>
+      <p>On ordinary launches before the next allowance boundary appears due, Kavuqo does not make a quota-related network request. Only when the device clock indicates that the next personal monthly boundary may have arrived does Kavuqo make a short HTTPS request to Apple's connectivity service at <code>captive.apple.com</code>.</p>
+      <p>Kavuqo reads the standard HTTP <code>Date</code> response header and uses it only to determine whether a new Free allowance period has actually begun. The request does not include transaction data, amounts, descriptions, Smart Entry text, quota state, StoreKit IDs, support email, or other Kavuqo user content.</p>
+      <p>Kavuqo does not use Akamai, TimeAPI.io, a developer-operated time server, or another third-party time provider for this check. If Apple time verification cannot be completed, Kavuqo does not grant a new Free Smart Entry allowance from the device clock alone. Manual transaction entry remains available offline without restriction.</p>
 
       <h2>Voice entry and speech recognition</h2>
       <p>Voice entry is optional. When the user chooses it, Kavuqo uses Apple's Speech framework and requests microphone and speech-recognition permission.</p>
@@ -53,11 +52,10 @@
 
       <h2>Analytics, advertising, and tracking</h2>
       <p>Kavuqo does not include third-party analytics SDKs, advertising SDKs, cross-app tracking, or behavioral profiling. The optional Premium card shown inside the Free version is first-party Kavuqo UI and is not supplied by an advertising network.</p>
-      <p>The conditional trusted-time requests described above are used only for Free-allowance integrity, not advertising, profiling, analytics, or cross-app tracking.</p>
 
-      <h2>Apple system services and external providers</h2>
-      <p>Apple system services used by iOS, including the App Store/StoreKit and Speech where applicable, may process information according to Apple's own privacy terms and device settings.</p>
-      <p>Akamai and TimeAPI.io process the limited network request used for trusted-time verification under their own privacy policies. Kavuqo does not send them financial records or user-entered Smart Entry content.</p>
+      <h2>Apple services and data collection</h2>
+      <p>Kavuqo does not collect data from the app through a developer-operated backend or third-party runtime service. Financial records, ordinary preferences, and Free allowance state remain on the device.</p>
+      <p>Apple system services used by Kavuqo, including the App Store/StoreKit, Speech where applicable, and the Apple connectivity service used for time verification, may process network or account information according to Apple's own privacy terms. Kavuqo does not receive or retain Apple's service-side data.</p>
 
       <h2>Support communications</h2>
       <p>If you contact Kavuqo Support by email, the email address and information you choose to include are processed by the email provider for the purpose of responding to your request. Support email is separate from the Kavuqo app itself; the app does not automatically send transaction data or other financial records to support.</p>
@@ -69,7 +67,7 @@
       <p>An App Store subscription is associated with the user's Apple Account rather than only with local Kavuqo app data. Subscription management and cancellation are handled through Apple.</p>
 
       <h2>Changes to this policy</h2>
-      <p>If Kavuqo later adds cloud sync, accounts, analytics, additional third-party services, or other data-handling behavior, this policy and the App Store privacy disclosures will be updated before that behavior ships.</p>
+      <p>If Kavuqo later adds cloud sync, accounts, analytics, non-Apple external services, or other data-handling behavior, this policy and the App Store privacy disclosures will be updated before that behavior ships.</p>
 
       <h2>Support</h2>
       <p>For help with Kavuqo, email <a href="mailto:kavuqo@proton.me">kavuqo@proton.me</a> or visit the <a href="/Kavuqo-site/support/">Kavuqo Support page</a>.</p>
