@@ -32,9 +32,10 @@
 
       <h2>Free allowance time verification</h2>
       <p>Kavuqo uses personal monthly Free Smart Entry periods beginning from first use of the app. The phone's local clock is not trusted to grant a new Free allowance by itself.</p>
-      <p>On ordinary launches before the next allowance boundary appears due, Kavuqo does not make a quota-related network request. Only when the device clock indicates that the next personal monthly boundary may have arrived does Kavuqo make a short HTTPS request to Apple's connectivity service at <code>captive.apple.com</code>.</p>
-      <p>Kavuqo reads the standard HTTP <code>Date</code> response header and uses it only to determine whether a new Free allowance period has actually begun. The request does not include transaction data, amounts, descriptions, Smart Entry text, quota state, StoreKit IDs, support email, or other Kavuqo user content.</p>
-      <p>Kavuqo does not use Akamai, TimeAPI.io, a developer-operated time server, or another third-party time provider for this check. If Apple time verification cannot be completed, Kavuqo does not grant a new Free Smart Entry allowance from the device clock alone. Manual transaction entry remains available offline without restriction.</p>
+      <p>On ordinary launches before the next allowance boundary appears due, Kavuqo does not make a quota-related network request. Only when the device clock indicates that the next personal monthly boundary may have arrived does Kavuqo query Apple's own network time service.</p>
+      <p>Kavuqo uses Apple's documented NTP hosts <code>time-ios.apple.com</code> and <code>time.apple.com</code> on UDP port 123. The request is a standard NTP client datagram and contains no transaction data, amounts, descriptions, Smart Entry text, quota state, StoreKit IDs, support email, account identifier, or other Kavuqo user content.</p>
+      <p>Kavuqo validates the NTP response and uses the Apple-provided server timestamp only to determine whether a new Free allowance period has actually begun. If Apple time verification cannot be completed, Kavuqo does not grant a new Free Smart Entry allowance from the device clock alone. Manual transaction entry remains available offline without restriction.</p>
+      <p>Kavuqo does not use Akamai, TimeAPI.io, a developer-operated time server, or another third-party time provider for this check.</p>
 
       <h2>Voice entry and speech recognition</h2>
       <p>Voice entry is optional. When the user chooses it, Kavuqo uses Apple's Speech framework and requests microphone and speech-recognition permission.</p>
@@ -55,7 +56,7 @@
 
       <h2>Apple services and data collection</h2>
       <p>Kavuqo does not collect data from the app through a developer-operated backend or third-party runtime service. Financial records, ordinary preferences, and Free allowance state remain on the device.</p>
-      <p>Apple system services used by Kavuqo, including the App Store/StoreKit, Speech where applicable, and the Apple connectivity service used for time verification, may process network or account information according to Apple's own privacy terms. Kavuqo does not receive or retain Apple's service-side data.</p>
+      <p>Apple system services used by Kavuqo, including the App Store/StoreKit, Speech where applicable, and Apple's network time service, may process network or account information according to Apple's own privacy terms. Kavuqo does not receive or retain Apple's service-side data.</p>
 
       <h2>Support communications</h2>
       <p>If you contact Kavuqo Support by email, the email address and information you choose to include are processed by the email provider for the purpose of responding to your request. Support email is separate from the Kavuqo app itself; the app does not automatically send transaction data or other financial records to support.</p>
