@@ -21,7 +21,7 @@
     <article class="policy">
       <p class="eyebrow">Privacy</p>
       <h1>Kavuqo Privacy Policy</h1>
-      <p class="updated">Effective date: September 9, 2026</p>
+      <p class="updated">Effective date: September 14, 2026</p>
 
       <p>Kavuqo is designed as a local-first personal-finance app. The developer does not operate a Kavuqo transaction backend, analytics service, advertising system, or user-account service.</p>
 
@@ -39,7 +39,8 @@
 
       <h2>Voice entry and speech recognition</h2>
       <p>Voice entry is optional. When the user chooses it, Kavuqo uses Apple's Speech framework and requests microphone and speech-recognition permission.</p>
-      <p>Kavuqo does not persist raw microphone audio. Depending on the device, operating-system configuration, language, and Apple service availability, speech recognition may be performed on-device or may use Apple's supported speech-recognition processing path. Kavuqo does not receive or store the audio on a developer-operated server.</p>
+      <p>Kavuqo requests on-device speech recognition when Apple reports that it is supported for the selected recognizer and language. If on-device recognition is not available, audio may be sent to Apple's Speech service for transcription after the user has granted Apple's speech-recognition permission.</p>
+      <p>Kavuqo does not operate a speech-recognition backend and does not receive, store, or retain raw microphone audio on a developer-operated server. Recognized text returned through Apple's Speech framework is used inside Kavuqo to prepare the user's editable transaction draft. Raw microphone audio is not persisted by Kavuqo.</p>
       <p>Typed Smart Entry can be used without microphone or speech-recognition permission while the user's Free allowance remains or without a Smart Entry limit with Premium. Manual entry always remains available without microphone or speech-recognition permission.</p>
 
       <h2>Apple Intelligence and Foundation Models</h2>
