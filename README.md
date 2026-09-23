@@ -14,17 +14,16 @@ Select:
 
 - Branch: `main`
 - Folder: `/ (root)`
+- Custom domain: `kavuqo.app`
 
-Expected URLs after Pages is enabled:
+Public URLs:
 
-- Home: https://angryhh34.github.io/Kavuqo-site/
-- Privacy Policy: https://angryhh34.github.io/Kavuqo-site/privacy/
-- Support: https://angryhh34.github.io/Kavuqo-site/support/
+- Home: https://kavuqo.app/
+- Privacy Policy: https://kavuqo.app/privacy/
+- Support: https://kavuqo.app/support/
 
-The repository is configured for static GitHub Pages publishing from `main` / repository root. A fresh commit may be used to trigger the first deployment after Pages is enabled.
+The repository is configured for static GitHub Pages publishing from `main` / repository root.
 
 ## Support
 
-Until a dedicated support email is configured, the public Support page uses this repository's GitHub Issues as the support channel. Users are explicitly warned not to include private financial information.
-
-When a dedicated support email is created, the Support page can be switched to a `mailto:` link without changing the public Support URL used by App Store Connect.
+Public support is provided by email at `kavuqo@proton.me`. The Support page asks users not to include private financial information or credentials.
