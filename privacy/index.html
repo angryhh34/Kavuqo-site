@@ -21,7 +21,7 @@
     <article class="policy">
       <p class="eyebrow">Privacy</p>
       <h1>Kavuqo Privacy Policy</h1>
-      <p class="updated">Effective date: September 14, 2026</p>
+      <p class="updated">Effective date: September 30, 2026</p>
 
       <p>Kavuqo is designed as a local-first personal-finance app. The developer does not operate a Kavuqo transaction backend, analytics service, advertising system, or user-account service.</p>
 
@@ -46,6 +46,13 @@
       <h2>Apple Intelligence and Foundation Models</h2>
       <p>On supported devices, Kavuqo may use Apple's on-device Foundation Models to improve transaction understanding. This feature is optional and depends on Apple Intelligence availability on the device.</p>
       <p>Kavuqo does not send Foundation Models prompts or model results to a developer-operated AI service.</p>
+
+      <h2>Siri, App Shortcuts, and App Lock</h2>
+      <p>Kavuqo can receive transaction text from Siri and App Shortcuts. These requests are used only to prepare an in-memory Smart Entry draft and foreground Kavuqo's editable confirmation. A Siri or Shortcut request never saves a transaction automatically.</p>
+      <p>Optional App Lock uses Apple's LocalAuthentication framework and device-owner authentication. Kavuqo stores only whether App Lock is enabled. Kavuqo does not receive or store Face ID, Touch ID, device-passcode data, or biometric templates.</p>
+
+      <h2>CSV export</h2>
+      <p>When the user chooses Export CSV, Kavuqo creates the file locally in a temporary app directory and passes it to the native iOS share sheet. Kavuqo does not upload the exported transaction history to a developer-operated server. Any external app or service selected in the share sheet is chosen by the user.</p>
 
       <h2>Kavuqo Premium and App Store purchases</h2>
       <p>Kavuqo Premium is offered through Apple's App Store using StoreKit. Apple processes subscription purchases and billing under the user's Apple Account and Apple's terms.</p>
